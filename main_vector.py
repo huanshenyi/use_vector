@@ -18,4 +18,3 @@ if __name__ == "__main__":
 
     zero2 = Vector.zero(2)
     print(zero2)
-    print("test")
