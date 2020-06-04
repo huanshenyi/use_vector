@@ -15,3 +15,6 @@ if __name__ == "__main__":
 
     print(-vec)        # (-5, -2)
     print(+vec)        # (5, 2)
+
+    zero2 = Vector.zero(2)
+    print(zero2)

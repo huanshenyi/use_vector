@@ -3,6 +3,17 @@ class Vector:
         # vectorの内容を保存する
         self._value = list(lst)
 
+    @classmethod
+    def zero(cls, dim):
+        """
+        dim　次元数
+        list = [1]
+        list2 = [2]
+        list + list2
+        [1, 2]
+        """
+        return cls([0] * dim)
+
     def __getitem__(self, index):
         """Vectorの何個目の要素"""
         return self._value[index]
@@ -76,7 +87,3 @@ class Vector:
         :return:
         """
         return -1 * self
-
-
-
-
