@@ -18,3 +18,12 @@ if __name__ == "__main__":
 
     zero2 = Vector.zero(2)
     print(zero2)
+
+    print(vec.norm())  # 5.385164807134504
+
+    print(vec.normalize().norm()) # 1.0
+
+    try:
+        zero2.normalize()
+    except ZeroDivisionError:
+        print("Cannot normalize zero vector{}".format(zero2))

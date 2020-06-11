@@ -1,3 +1,8 @@
+import math
+
+from .__global import EPSILON
+
+
 class Vector:
     def __init__(self, lst):
         # vectorの内容を保存する
@@ -13,6 +18,22 @@ class Vector:
         [1, 2]
         """
         return cls([0] * dim)
+
+    def norm(self):
+        """
+        ノルムvectorの長さ
+        :return:
+        """
+        return math.sqrt(sum(e**2 for e in self))
+
+    def normalize(self):
+        """
+        単位ベクトル
+        :return:
+        """
+        if self.norm() == 0:
+            raise ZeroDivisionError("Normalize error! norm is zero.")
+        return Vector(self._value) / self.norm()
 
     def __getitem__(self, index):
         """Vectorの何個目の要素"""
@@ -73,6 +94,14 @@ class Vector:
         :return:
         """
         return Vector([k * e for e in self])
+
+    def __truediv__(self, k):
+        """
+        割り算 flout返す
+        :param k:
+        :return: self / k
+        """
+        return (1 / k) * self
 
     def __pos__(self):
         """
