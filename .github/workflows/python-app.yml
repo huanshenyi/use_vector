@@ -23,6 +23,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Run unit_test
+    - name: Run vector_unit_test
       run: |
         pytest -v  ./useVector/tests/test_vector.py
+    - name: Run matrix_unit_test
+      run: |
+        pytest -v  ./useVector/tests/test_matrix.py
