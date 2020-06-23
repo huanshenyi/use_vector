@@ -5,6 +5,26 @@ class Matrix:
     def __init__(self, list2d):
         self._value = [row[:] for row in list2d]
 
+    def __add__(self, another):
+        """
+        マトリクスの足し算
+        :param another:もう一つマトリックス
+        :return:
+        """
+        assert self.shape() == another.shape(), \
+            "Error in adding. Shape of matrix must be same."
+        return Matrix([[a + b for a, b in zip(self.row_vector(i), another.row_vector(i))]] for i in range(len(self)))
+
+    def __sub__(self, another):
+        """
+        マトリクスの引き算
+        :param another: もう一つのマトリクス
+        :return:
+        """
+        assert self.shape() == another.shape(), \
+            "Error in adding. Shape of matrix must be same."
+        return Matrix([[a - b for a, b in zip(self.row_vector(i), another.row_vector(i))]] for i in range(len(self)))
+
     def row_vector(self, index):
         """
         第何行の内容
