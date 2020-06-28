@@ -35,6 +35,24 @@ class Matrix:
             "Error in adding. Shape of matrix must be same."
         return Matrix([[a - b for a, b in zip(self.row_vector(i), another.row_vector(i))]] for i in range(len(self)))
 
+    def dot(self, another):
+        """
+        マトリクスのドット掛け算
+        :param another:
+        :return: 掛け算の結果
+        """
+        if isinstance(another, Vector):
+            # マトリクス掛けベクトル
+            assert self.col_num() == len(another), \
+                 "Error in Matrix-Vector Multiplication"
+            return Vector([self.row_vector(i).dot(another) for i in range(self.row_num())])
+        if isinstance(another, Matrix):
+            # マトリクス掛けマトリクス
+            assert self.col_num() == another.row_num(), \
+                 "Error in Matrix-Matrix Multiplication"
+            return Matrix([[self.row_vector(i).dot(another.col_vector(j)) for j in range(another.col_num())]
+                           for i in range(self.row_num())])
+
     def __mul__(self, k):
         """
         マトリクスの掛け算

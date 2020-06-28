@@ -35,6 +35,16 @@ class Vector:
             raise ZeroDivisionError("Normalize error! norm is zero.")
         return Vector(self._value) / self.norm()
 
+    def dot(self, another):
+        """
+        ベクトル掛けるベクトル
+        :param another:
+        :return:
+        """
+        assert len(self) == len(another), \
+            "Error in dot product. Length of vectors must be same."
+        return sum(a * b for a, b in zip(self, another))
+
     def __getitem__(self, index):
         """Vectorの何個目の要素"""
         return self._value[index]

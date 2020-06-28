@@ -1,4 +1,5 @@
 from useVector.Matrix import Matrix
+from useVector.Vector import Vector
 
 
 if __name__ == "__main__":
@@ -17,3 +18,14 @@ if __name__ == "__main__":
     print("scalar-mul:{}".format(matrix*2)) # scalar-mul:Matrix([[2, 4], [6, 8]])
     print("scalar-mul:{}".format(2 * matrix)) # scalar-mul:Matrix([[2, 4], [6, 8]])
     print(Matrix.zero(2, 3)) # Matrix([[0, 0, 0], [0, 0, 0]])
+
+    T = Matrix([[1.5, 0], [0, 2]])
+    p = Vector([5, 3])
+    print("T.dot(p) = {}".format(T.dot(p))) # T.dot(p) = (7.5, 6)
+
+    P = Matrix([[0, 4, 5], [0, 0, 3]])
+    print("T.dot(P) = {}".format(T.dot(P))) # T.dot(P) = Matrix([[0.0, 6.0, 7.5], [0, 0, 6]])
+
+    print("A.dot(B) = {}".format(matrix.dot(matrix2))) # A.dot(B) = Matrix([[19, 22], [43, 50]])
+    print("B.dot(A) = {}".format(matrix2.dot(matrix))) # B.dot(A) = Matrix([[23, 34], [31, 46]])
+
