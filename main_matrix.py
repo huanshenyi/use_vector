@@ -29,3 +29,5 @@ if __name__ == "__main__":
     print("A.dot(B) = {}".format(matrix.dot(matrix2))) # A.dot(B) = Matrix([[19, 22], [43, 50]])
     print("B.dot(A) = {}".format(matrix2.dot(matrix))) # B.dot(A) = Matrix([[23, 34], [31, 46]])
 
+    print("P.T = {}".format(P.T())) # P.T = Matrix([[0, 0], [4, 0], [5, 3]])
+

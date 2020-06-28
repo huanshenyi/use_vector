@@ -13,10 +13,10 @@ if __name__ == "__main__":
 
    print(np.ones(5)) # [1. 1. 1. 1. 1.]
 
-   print(np.full(5, 666)) # [1. 1. 1. 1. 1.]
+   print(np.full(5, 666)) # [666 666 666 666 666]
 
    #npの基本属性
-   print(vec)
+   print(vec) # [1 2 3]
 
    print(f"size={vec.size}") # size = 3
    print(f"len={len(vec)}")  # len=3
