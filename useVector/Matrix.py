@@ -15,6 +15,18 @@ class Matrix:
         """
         return cls([[0] * c for _ in range(r)])
 
+    @classmethod
+    def identity(cls, n):
+        """
+        n行n列の単位行列
+        :param n:
+        :return:
+        """
+        m = [[0]*n for _ in range(n)]
+        for i in range(n):
+            m[i][i] = 1
+        return cls(m)
+
     def T(self):
         """
         転置行列後のマトリクスを返す

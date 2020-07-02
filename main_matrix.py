@@ -30,4 +30,8 @@ if __name__ == "__main__":
     print("B.dot(A) = {}".format(matrix2.dot(matrix))) # B.dot(A) = Matrix([[23, 34], [31, 46]])
 
     print("P.T = {}".format(P.T())) # P.T = Matrix([[0, 0], [4, 0], [5, 3]])
+    I = Matrix.identity(2)
+    print('I=', I) # I= Matrix([[1, 0], [0, 1]])
+    print("A.dot(I) = {}".format(matrix.dot(I)))
+    print("I.dot(A) = {}".format(I.dot(Matrix)))
 
