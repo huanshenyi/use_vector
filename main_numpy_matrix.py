@@ -48,3 +48,23 @@ if __name__ == "__main__":
     print(A + p) # 意味がない
 
     print(A.dot(p)) # [210 430]
+
+    # 単位行列
+    I = np.identity(2)
+    print(I)
+    """
+    [[1. 0.]
+     [0. 1.]]
+    """
+    print(A.dot(I))
+    print(I.dot(A))
+
+    # 正則行列
+    invA = np.linalg.inv(A)
+    print(invA)
+    """
+    [[-2.   1. ]
+     [ 1.5 -0.5]]
+     """
+    print(invA.dot(A)) # 正則行列かける元の行列の結果は単位行列
+    print(A.dot(invA))
