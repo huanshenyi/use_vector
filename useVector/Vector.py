@@ -35,6 +35,13 @@ class Vector:
             raise ZeroDivisionError("Normalize error! norm is zero.")
         return Vector(self._value) / self.norm()
 
+    def underlying_list(self):
+        """
+        ベクトルのリストを返す
+        :return:
+        """
+        return self._value[:]
+
     def dot(self, another):
         """
         ベクトル掛けるベクトル
