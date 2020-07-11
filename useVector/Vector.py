@@ -1,6 +1,6 @@
 import math
 
-from .__global import EPSILON
+from .__global import is_zero
 
 
 class Vector:
@@ -31,7 +31,7 @@ class Vector:
         単位ベクトル
         :return:
         """
-        if self.norm() == 0:
+        if is_zero(self.norm()):
             raise ZeroDivisionError("Normalize error! norm is zero.")
         return Vector(self._value) / self.norm()
 
