@@ -2,6 +2,7 @@ __author__ = "ハリネズミ"
 from useVector.Matrix import Matrix
 from useVector.Vector import Vector
 from useVector.LinearSystem import LinearSystem
+from useVector.LinearSystem import inv
 
 
 if __name__ == "__main__":
@@ -19,3 +20,9 @@ if __name__ == "__main__":
     ls7 = LinearSystem(A7, b7)
     ls7.gauss_jordan_elimination()
     ls7.fancy_print()
+
+    A = Matrix([[1, 2], [3, 4]])
+    invA = inv(A)
+    print(invA)
+    print(A.dot(invA))
+    print(invA.dot(A))
